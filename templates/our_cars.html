@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Voitures</title>
+    <link rel="stylesheet" href="../css/our_cars.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="index.html"><img src="../img/logo.png" alt="Car Auction Logo" class="logo"></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="our_cars.html">Nos Voitures</a>
+                <a href="sell_car.html">Vendre votre Voiture</a>
+                <a href="#">Blog</a>
+                <a href="#">À Propos</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="nav-right">
+                <input type="text" placeholder="Rechercher">
+                <a href="#"><img src="../img/notif.png" alt="Notifications"></a>
+                <a href="login.html"><img src="../img/connexion.png" alt="Connexion"></a>
+                <a href="login.html" class="login-link">Connectez-vous</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="car-filter">
+            <h2>Nos Voitures</h2>
+            <div class="filters">
+                <label for="sort-price">Trier par Prix:</label>
+                <select id="sort-price">
+                    <option value="asc">Prix Croissant</option>
+                    <option value="desc">Prix Décroissant</option>
+                </select>
+
+                <label for="sort-date">Trier par Date:</label>
+                <select id="sort-date">
+                    <option value="asc">Date Croissante</option>
+                    <option value="desc">Date Décroissante</option>
+                </select>
+            </div>
+            <div class="car-list">
+                <!-- Car items will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="our_cars.html">Nos Voitures</a>
+                <a href="sell_car.html">Vendre votre Voiture</a>
+                <a href="#">Blog</a>
+                <a href="#">À Propos</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="social-media">
+                <a href="#"><img src="../img/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="../img/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="../img/instagram-icon.png" alt="Instagram"></a>
+            </div>
+            <div class="newsletter">
+                <h3>S'abonner à notre newsletter</h3>
+                <input type="email" placeholder="Votre email">
+                <button>S'abonner</button>
+            </div>
+            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="../js/our_cars.js"></script>
+</body>
+</html>
