@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Car Auction</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo-container">
+            <a href="index.ejs"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Accueil</a>
+            <a href="http://localhost:3000/our_cars">Nos Voitures</a>
+            <a href="http://localhost:3000/sell_car">Vendre votre Voiture</a>
+            <a href="a_propos.ejs">À Propos</a>
+            <a href="contact.ejs">Contact</a>
+        </div>
+        <div class="nav-right">
+            <input type="text" placeholder="Rechercher">
+            <a href="#"><img src="../assets/img/notif.png" alt="Notifications"></a>
+            <a href="http://localhost:3000/login"><img src="../assets/img/connexion.png" alt="Connexion"></a>
+            <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
+            <a href="http://localhost:3000/login"><img src="../assets/img/panier.png" alt="Panier" class="panier-icon"></a>
+        </div>
+    </nav>
+</header>
+    <main>
+        <section class="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" action="/send-message" method="POST">
+                <input type="text" name="name" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button class="cta-button" type="submit">Envoyer</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Adresse:</strong> 123 Rue de la Voiture, Paris</p>
+                <p><strong>Téléphone:</strong> +33 1 23 45 67 89</p>
+                <p><strong>Email:</strong> contact@carauction.com</p>
+                <div id="map"></div>
+            </div>
+        </section>
+    </main>
+    <%- include('partials/footer.ejs') %>
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
