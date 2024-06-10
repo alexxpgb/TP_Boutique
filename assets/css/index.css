@@ -316,3 +316,39 @@ footer {
     background-color: #FF4B2B;
     color: #fff;
 }
+
+
+/* Ajoutez cette partie à votre fichier CSS existant */
+
+/* Styles pour le panier dans le header */
+.nav-right .panier-icon {
+    height: 24px;
+    margin-left: 10px;
+}
+
+/* Styles pour les boutons Favoris et Acheter dans la section en vedette */
+.featured-car .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Styles spécifiques pour les boutons Favoris et Acheter */
+.featured-car .cta-button.favoris {
+    background-color: #ff9800;
+    border: 1px solid #ff9800;
+}
+
+.featured-car .cta-button.acheter {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.featured-car .cta-button.favoris:hover {
+    background-color: #e68900;
+}
+
+.featured-car .cta-button.acheter:hover {
+    background-color: #45a049;
+}

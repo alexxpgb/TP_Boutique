@@ -10,33 +10,36 @@
     <header>
         <nav>
             <div class="logo-container">
-                <a href="index.html"><img src="/assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
+                <a href="index.ejs"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
             </div>
             <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="our_cars.html">Nos Voitures</a>
-                <a href="sell_car.html">Vendre votre Voiture</a>
-                <a href="blog.html">Blog</a>
-                <a href="a_propos.html">À Propos</a>
-                <a href="contact.html">Contact</a>
+                <a href="/">Accueil</a>
+                <a href="http://localhost:3000/our_cars">Nos Voitures</a>
+                <a href="http://localhost:3000/sell_car">Vendre votre Voiture</a>
+                <a href="a_propos.ejs">À Propos</a>
+                <a href="contact.ejs">Contact</a>
             </div>
             <div class="nav-right">
                 <input type="text" placeholder="Rechercher">
-                <a href="#"><img src="/assets/img/notif.png" alt="Notifications"></a>
-                <a href="login.html"><img src="/assets/img/connexion.png" alt="Connexion"></a>
-                <a href="login.html" class="login-link">Connectez-vous</a>
+                <a href="#"><img src="../assets/img/notif.png" alt="Notifications"></a>
+                <a href="http://localhost:3000/login"><img src="../assets/img/connexion.png" alt="Connexion"></a>
+                <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
+                <a href="http://localhost:3000/login"><img src="../assets/img/panier.png" alt="Panier" class="panier-icon"></a>
             </div>
         </nav>
     </header>
     <main>
         <!-- Section en vedette -->
         <section class="featured-car">
-            <img src="/assets/img/mercedes.jpg" alt="Mercedes-Benz AMG GT-R Track Pack - 2020" class="featured-car-image">
+            <img src="../assets/img/mercedes.jpg" alt="Mercedes-Benz AMG GT-R Track Pack - 2020" class="featured-car-image">
             <div class="car-details">
                 <h1>Mercedes-Benz AMG GT-R Track Pack - 2020</h1>
                 <p class="bid-info">Meilleure enchère: <span>550 €</span></p>
                 <p class="time-left">Termine dans: <span>7 jours</span></p>
-                <button class="cta-button">Je suis intéressé</button>
+                <div class="buttons">
+                    <button class="cta-button favoris">Favoris</button>
+                    <button class="cta-button acheter">Acheter</button>
+                </div>
             </div>
         </section>
         <!-- Section meilleures ventes -->
@@ -60,12 +63,12 @@
         </section>
         <!-- Section héros -->
         <section class="hero">
-            <img src="/assets/img/hero.jpg" alt="Hero Image" class="hero-image">
+            <img src="../assets/img/hero.jpg" alt="Hero Image" class="hero-image">
             <div class="hero-text">
                 <h1>Découvrez Nos Voitures de Rêve</h1>
                 <p>Les meilleures offres pour les amateurs de voitures de luxe.</p>
-                <a href="our_cars.html"><button class="cta-button">Voir Nos Voitures</button></a>
-                <a href="sell_car.html"><button class="cta-button">Vendre votre Voiture</button></a>
+                <a href="our_cars.ejs"><button class="cta-button">Voir Nos Voitures</button></a>
+                <a href="sell_car.ejs"><button class="cta-button">Vendre votre Voiture</button></a>
             </div>
         </section>
         <!-- Section vendre votre voiture -->
@@ -119,19 +122,19 @@
             <p>Nous sommes une entreprise passionnée par les voitures de luxe. Découvrez notre histoire et notre équipe.</p>
             <div class="team">
                 <div class="team-member">
-                    <img src="/assets/img/team1.jpg" alt="John Doe - CEO">
+                    <img src="../assets/img/team1.jpg" alt="John Doe - CEO">
                     <p>John Doe - CEO</p>
                 </div>
                 <div class="team-member">
-                    <img src="/assets/img/team2.jpg" alt="Jane Smith - CTO">
+                    <img src="../assets/img/team2.jpg" alt="Jane Smith - CTO">
                     <p>Jane Smith - CTO</p>
                 </div>
                 <div class="team-member">
-                    <img src="/assets/img/team3.jpg" alt="Emily Johnson - Marketing Manager">
+                    <img src="../assets/img/team3.jpg" alt="Emily Johnson - Marketing Manager">
                     <p>Emily Johnson - Marketing Manager</p>
                 </div>
                 <div class="team-member">
-                    <img src="/assets/img/team4.jpg" alt="Michael Brown - Sales Manager">
+                    <img src="../assets/img/team4.jpg" alt="Michael Brown - Sales Manager">
                     <p>Michael Brown - Sales Manager</p>
                 </div>
             </div>
@@ -156,17 +159,17 @@
     <footer>
         <div class="footer-content">
             <nav>
-                <a href="index.html">Accueil</a>
-                <a href="our_cars.html">Nos Voitures</a>
-                <a href="sell_car.html">Vendre votre Voiture</a>
-                <a href="blog.html">Blog</a>
-                <a href="a_propos.html">À Propos</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.ejs">Accueil</a>
+                <a href="our_cars.ejs">Nos Voitures</a>
+                <a href="sell_car.ejs">Vendre votre Voiture</a>
+                <a href="blog.ejs">Blog</a>
+                <a href="a_propos.ejs">À Propos</a>
+                <a href="contact.ejs">Contact</a>
             </nav>
             <div class="social-media">
-                <a href="#"><img src="/assets/img/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="/assets/img/twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="/assets/img/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="../assets/img/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="../assets/img/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="../assets/img/instagram-icon.png" alt="Instagram"></a>
             </div>
             <div class="newsletter">
                 <h3>S'abonner à notre newsletter</h3>
@@ -176,6 +179,6 @@
             <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="/assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

@@ -35,6 +35,21 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+app.get('/our_cars', (req, res) => {
+    res.render('our_cars');
+});
+
+app.get('/register', (req, res) => {
+    res.render('register');
+});
+
+app.get('/sell_car', (req, res) => {
+    res.render('sell_car');
+});
 // Routes API pour gérer les produits
 app.get('/api/products', (req, res) => {
     let sql = 'SELECT * FROM products';
