@@ -8,26 +8,27 @@
 </head>
 <body>
     <header>
-        <nav>
+        <div class="header-container">
             <div class="logo-container">
                 <a href="index.ejs"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
             </div>
-            <div class="nav-links">
-                <a href="/">Accueil</a>
-                <a href="http://localhost:3000/our_cars">Nos Voitures</a>
-                <a href="http://localhost:3000/sell_car">Vendre votre Voiture</a>
-                <a href="a_propos.ejs">À Propos</a>
-                <a href="contact.ejs">Contact</a>
-            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="http://localhost:3000/">Accueil</a></li>
+                    <li><a href="http://localhost:3000/our_cars">Nos Voitures</a></li>
+                    <li><a href="http://localhost:3000/sell_car">Vendre votre Voiture</a></li>
+                    <li><a href="a_propos.ejs">À Propos</a></li>
+                    <li><a href="contact.ejs">Contact</a></li>
+                </ul>
+            </nav>
             <div class="nav-right">
                 <input type="text" placeholder="Rechercher">
-                <a href="#"><img src="../assets/img/notif.png" alt="Notifications"></a>
-                <a href="http://localhost:3000/login"><img src="../assets/img/connexion.png" alt="Connexion"></a>
                 <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
-                <a href="http://localhost:3000/login"><img src="../assets/img/panier.png" alt="Panier" class="panier-icon"></a>
+                <a href="http://localhost:3000/login" class="panier-icon">Panier</a>
             </div>
-        </nav>
+        </div>
     </header>
+
     <main>
         <!-- Section en vedette -->
         <section class="featured-car">
@@ -83,14 +84,6 @@
                 <input type="text" placeholder="État Général" required>
                 <button class="cta-button" type="submit">Obtenir une Estimation</button>
             </form>
-        </section>
-        <!-- Section blog -->
-        <section class="blog">
-            <h2>Blog</h2>
-            <div class="blog-posts">
-                <!-- Les articles de blog seront générés par JavaScript -->
-            </div>
-            <button class="cta-button">Voir le Blog</button>
         </section>
         <!-- Section avis clients -->
         <section class="testimonials">
