@@ -50,6 +50,14 @@ app.get('/register', (req, res) => {
 app.get('/sell_car', (req, res) => {
     res.render('sell_car');
 });
+
+app.get('/a_propos', (req, res) => {
+    res.render('a_propos');
+});
+
+app.get('/contact', (req, res) => {
+    res.render('contact');
+});
 // Routes API pour gérer les produits
 app.get('/api/products', (req, res) => {
     let sql = 'SELECT * FROM products';
