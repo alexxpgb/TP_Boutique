@@ -8,26 +8,27 @@
 </head>
 <body>
     <header>
-        <nav>
+        <div class="header-container">
             <div class="logo-container">
-                <a href="http://localhost:3000"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
+                <a href="http://localhost:3000/"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
             </div>
-            <div class="nav-links">
-                <a href="/">Accueil</a>
-                <a href="http://localhost:3000/our_cars">Nos Voitures</a>
-                <a href="http://localhost:3000/sell_car">Vendre votre Voiture</a>
-                <a href="http://localhost:3000/a_propos">À Propos</a>
-                <a href="http://localhost:3000/contact">Contact</a>
-            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="http://localhost:3000/">Accueil</a></li>
+                    <li><a href="http://localhost:3000/our_cars">Nos Voitures</a></li>
+                    <li><a href="http://localhost:3000/sell_car">Vendre votre Voiture</a></li>
+                    <li><a href="http://localhost:3000/a_propos">À Propos</a></li>
+                    <li><a href="http://localhost:3000/contact">Contact</a></li>
+                </ul>
+            </nav>
             <div class="nav-right">
                 <input type="text" placeholder="Rechercher">
-                <a href="#"><img src="../assets/img/notif.png" alt="Notifications"></a>
-                <a href="http://localhost:3000/login"><img src="../assets/img/connexion.png" alt="Connexion"></a>
                 <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
-                <a href="http://localhost:3000/login"><img src="../assets/img/panier.png" alt="Panier" class="panier-icon"></a>
+                <a href="http://localhost:3000/login" class="panier-icon">Panier</a>
             </div>
-        </nav>
+        </div>
     </header>
+
     <main>
         <section class="contact">
             <h2>Contact</h2>
