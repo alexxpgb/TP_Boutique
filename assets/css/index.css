@@ -258,6 +258,26 @@ input, textarea {
     border: 1px solid #ddd;
 }
 
+.testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 300px;
+    text-align: center;
+}
+
 footer {
     background-color: #333;
     color: #fff;

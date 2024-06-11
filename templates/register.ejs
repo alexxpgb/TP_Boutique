@@ -6,22 +6,10 @@
     <title>Inscription</title>
     <link rel="stylesheet" href="../assets/css/register.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="nav-left">
-                <a href="#"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
-                <a href="#">Acheter</a>
-                <a href="#">Vendre</a>
-                <a href="#">Shop</a>
-            </div>
-            <div class="nav-right">
-                <input type="text" placeholder="Rechercher">
 
-                <a href="#"><img src="../assets/img/user-icon.png" alt="Connexion"></a>
-            </div>
-        </nav>
-    </header>
+<%- include("../partials/header.ejs") %>
+
+<body>
     <main>
         <div class="container">
             <div class="form-container sign-up-container">
@@ -41,15 +29,8 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-            <nav>
-                <a href="#">Contact</a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-            </nav>
-        </div>
-    </footer>
+    
+    <%- include("../partials/footer.ejs") %>
+
 </body>
 </html>

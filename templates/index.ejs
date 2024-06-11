@@ -6,28 +6,11 @@
     <title>Car Auction</title>
     <link rel="stylesheet" href="../assets/css/index.css">
 </head>
+
+<%- include("../partials/header.ejs") %>
+
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="index.ejs"><img src="../assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
-            </div>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="http://localhost:3000/">Accueil</a></li>
-                    <li><a href="http://localhost:3000/our_cars">Nos Voitures</a></li>
-                    <li><a href="http://localhost:3000/sell_car">Vendre votre Voiture</a></li>
-                    <li><a href="a_propos.ejs">À Propos</a></li>
-                    <li><a href="contact.ejs">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-right">
-                <input type="text" placeholder="Rechercher">
-                <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
-                <a href="http://localhost:3000/login" class="panier-icon">Panier</a>
-            </div>
-        </div>
-    </header>
+    
 
     <main>
         <!-- Section en vedette -->
@@ -45,7 +28,7 @@
         </section>
         <!-- Section meilleures ventes -->
         <section class="best-selling-cars">
-            <h2>Meilleures Ventes</h2>
+            <h2>En stock</h2>
             <div class="car-list" id="car-list">
                 <!-- Les éléments de voiture seront générés par JavaScript -->
             </div>
@@ -53,13 +36,12 @@
                 <!-- Les contrôles de pagination seront générés par JavaScript -->
             </div>
             <div class="search-filters">
-                <button>Temps Restant</button>
-                <button>Sans Réserve</button>
-                <button>Suivi</button>
-                <button>Marque</button>
-                <button>Modèle</button>
-                <button>Année</button>
-                <button>Prix</button>
+                <button>NOS BMW</button>
+                <button>NOS MERCEDES</button>
+                <button>NOS AUDI</button>
+                <button>Trier par date</button>
+                <button>Trier par prix croissant</button>
+                <button>Trier par prix decroissant</button>
             </div>
         </section>
         <!-- Section héros -->
@@ -149,29 +131,9 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-content">
-            <nav>
-                <a href="index.ejs">Accueil</a>
-                <a href="our_cars.ejs">Nos Voitures</a>
-                <a href="sell_car.ejs">Vendre votre Voiture</a>
-                <a href="blog.ejs">Blog</a>
-                <a href="a_propos.ejs">À Propos</a>
-                <a href="contact.ejs">Contact</a>
-            </nav>
-            <div class="social-media">
-                <a href="#"><img src="../assets/img/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="../assets/img/twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="../assets/img/instagram-icon.png" alt="Instagram"></a>
-            </div>
-            <div class="newsletter">
-                <h3>S'abonner à notre newsletter</h3>
-                <input type="email" placeholder="Votre email">
-                <button>S'abonner</button>
-            </div>
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-        </div>
-    </footer>
+    
+    <%- include("../partials/footer.ejs") %>
+
     <script src="../assets/js/script.js"></script>
 </body>
 </html>

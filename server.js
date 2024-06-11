@@ -58,6 +58,12 @@ app.get('/a_propos', (req, res) => {
 app.get('/contact', (req, res) => {
     res.render('contact');
 });
+
+app.get('/page_produit', (req, res) => {
+    res.render('page_produit');
+});
+
+
 // Routes API pour gérer les produits
 app.get('/api/products', (req, res) => {
     let sql = 'SELECT * FROM products';

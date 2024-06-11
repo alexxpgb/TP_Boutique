@@ -6,25 +6,10 @@
     <title>Produit - Mercedes-Benz AMG GT-R</title>
     <link rel="stylesheet" href="../assets/css/pageproduit.css">
 </head>
+
+<%- include("../partials/header.ejs") %>
+
 <body>
-    <header>
-        <nav>
-            <div class="nav-left">
-                <a href="index.ejs" class="logo">Accueil</a>
-                <a href="#">Acheter</a>
-                <a href="sell_car.ejs">Vendre</a>
-                <a href="#">Shop</a>
-                <a href="#">À propos</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="nav-right">
-                <input type="text" placeholder="Rechercher">
-                <a href="#"><img src="../assets/img/bell-icon.png" alt="Notifications"></a>
-                <a href="#"><img src="../assets/img/user-icon.png" alt="Connexion"></a>
-                <a href="#"><img src="../assets/img/france-flag.png" alt="Français"></a>
-            </div>
-        </nav>
-    </header>
     <main>
         <section class="product-details">
             <div class="product-gallery">
@@ -77,21 +62,9 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-            <nav>
-                <a href="#">Contact</a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-            </nav>
-            <div class="newsletter">
-                <h3>Abonnez-vous à notre newsletter</h3>
-                <input type="email" placeholder="Votre email">
-                <button>S'abonner</button>
-            </div>
-        </div>
-    </footer>
+    
+    <%- include("../partials/footer.ejs") %>
+
     <script src="../assets/js/scripts.js"></script>
 </body>
 </html>
