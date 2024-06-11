@@ -6,6 +6,9 @@
     <title>Inscription</title>
     <link rel="stylesheet" href="../assets/css/register.css">
 </head>
+
+<%- include("../partials/header.ejs") %>
+
 <body>
     <header>
         <div class="header-container">
@@ -42,21 +45,14 @@
                     <input type="text" placeholder="Ville" required/>
                     <input type="text" placeholder="Code Postal" required/>
                     <input type="text" placeholder="Numéro de téléphone" required/>
-                    <button>S'inscrire</button>
-                    <p>Vous avez déjà un compte ? <a href="login.html">Connexion</a></p>
+                    <button >S'inscrir e</button>
+                    <p>Vous avez déjà un compte ? <a href="http://localhost:3000/login">Connexion</a></p>
                 </form>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-            <nav>
-                <a href="#">Contact</a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-            </nav>
-        </div>
-    </footer>
+    
+    <%- include("../partials/footer.ejs") %>
+
 </body>
 </html>

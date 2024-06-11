@@ -6,6 +6,9 @@
     <title>Produit - Mercedes-Benz AMG GT-R</title>
     <link rel="stylesheet" href="../assets/css/pageproduit.css">
 </head>
+
+<%- include("../partials/header.ejs") %>
+
 <body>
     <header>
         <div class="header-container">
@@ -32,11 +35,11 @@
     <main>
         <section class="product-details">
             <div class="product-gallery">
-                <img id="mainImage" src="../img/mercedes.jpg" alt="Mercedes-Benz AMG GT-R Track Pack - 2020">
+                <img id="mainImage" src="../assets/img/mercedes.jpg" alt="Mercedes-Benz AMG GT-R Track Pack - 2020">
                 <div class="thumbnail-images">
-                    <img src="../img/mercedes1.jpg" alt="Mercedes Thumbnail 1" onclick="changeImage('../img/mercedes1.jpg')">
-                    <img src="../img/mercedes2.jpg" alt="Mercedes Thumbnail 2" onclick="changeImage('../img/mercedes2.jpg')">
-                    <img src="../img/mercedes3.jpg" alt="Mercedes Thumbnail 3" onclick="changeImage('../img/mercedes3.jpg')">
+                    <img src="../assets/img/mercedes1.jpg" alt="Mercedes Thumbnail 1" onclick="changeImage('../assets/img/mercedes1.jpg')">
+                    <img src="../assets/img/mercedes2.jpg" alt="Mercedes Thumbnail 2" onclick="changeImage('../assets/img/mercedes2.jpg')">
+                    <img src="../assets/img/mercedes3.jpg" alt="Mercedes Thumbnail 3" onclick="changeImage('../assets/img/mercedes3.jpg')">
                 </div>
             </div>
             <div class="product-info">
@@ -81,21 +84,9 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-            <nav>
-                <a href="#">Contact</a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-            </nav>
-            <div class="newsletter">
-                <h3>Abonnez-vous à notre newsletter</h3>
-                <input type="email" placeholder="Votre email">
-                <button>S'abonner</button>
-            </div>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
+    
+    <%- include("../partials/footer.ejs") %>
+
+    <script src="../assets/js/scripts.js"></script>
 </body>
 </html>

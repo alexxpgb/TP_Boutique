@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { img: '../assets/img/Mercedes/g63/1.jpg', model: 'Mercedes G63', price: '200,000 €', timeLeft: '22 jours' },
         { img: '../assets/img/Mercedes/glc/1.jpg', model: 'Mercedes GLC', price: '80,000 €', timeLeft: '23 jours' },
         { img: '../assets/img/Mercedes/sl63/1.jpg', model: 'Mercedes SL63', price: '150,000 €', timeLeft: '24 jours' },
-        // Génération de voitures supplémentaires pour atteindre 50
     ];
 
     // Generate additional car items for demonstration

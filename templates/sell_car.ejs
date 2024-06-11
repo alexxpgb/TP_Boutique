@@ -6,6 +6,9 @@
     <title>Vendre votre Voiture</title>
     <link rel="stylesheet" href="../assets/css/sell_car.css">
 </head>
+
+<%- include("../partials/header.ejs") %>
+
 <body>
     <header>
         <div class="header-container">
@@ -59,29 +62,9 @@
             </form>
         </section>
     </main>
-    <footer>
-        <div class="footer-content">
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="page_produit.html">Nos Voitures</a>
-                <a href="sell_car.html">Vendre votre Voiture</a>
-                <a href="#">Blog</a>
-                <a href="#">À Propos</a>
-                <a href="#">Contact</a>
-            </nav>
-            <div class="social-media">
-                <a href="#"><img src="../img/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="../img/twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="../img/instagram-icon.png" alt="Instagram"></a>
-            </div>
-            <div class="newsletter">
-                <h3>S'abonner à notre newsletter</h3>
-                <input type="email" placeholder="Votre email">
-                <button>S'abonner</button>
-            </div>
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
+    
+    <%- include("../partials/footer.ejs") %>
+
+    <script src="../assets/js/scripts.js"></script>
 </body>
 </html>

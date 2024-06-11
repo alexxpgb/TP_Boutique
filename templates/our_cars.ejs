@@ -23,8 +23,14 @@
             </nav>
             <div class="nav-right">
                 <input type="text" placeholder="Rechercher">
+<<<<<<< HEAD
                 <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
                 <a href="http://localhost:3000/login" class="panier-icon">Panier</a>
+=======
+                <a href="#"><img src="../assets/img/notif.png" alt="Notifications"></a>
+                <a href="http://localhost:3000/login"><img src="../assets/img/connexion.png" alt="Connexion"></a>
+                <a href="http://localhost:3000/login" class="login-link">Connectez-vous</a>
+>>>>>>> 61bdd8496e5bdb33ef71328df36c121195eb33ba
             </div>
         </div>
     </header>
@@ -50,29 +56,9 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-content">
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="our_cars.html">Nos Voitures</a>
-                <a href="sell_car.html">Vendre votre Voiture</a>
-                <a href="#">Blog</a>
-                <a href="#">À Propos</a>
-                <a href="#">Contact</a>
-            </nav>
-            <div class="social-media">
-                <a href="#"><img src="../img/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="../img/twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="../img/instagram-icon.png" alt="Instagram"></a>
-            </div>
-            <div class="newsletter">
-                <h3>S'abonner à notre newsletter</h3>
-                <input type="email" placeholder="Votre email">
-                <button>S'abonner</button>
-            </div>
-            <p>&copy; 2024 Car Auction. Tous droits réservés.</p>
-        </div>
-    </footer>
-    <script src="../js/our_cars.js"></script>
+    
+    <%- include("../partials/footer.ejs") %>
+
+    <script src="../assets/js/our_cars.js"></script>
 </body>
 </html>
