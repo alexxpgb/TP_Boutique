@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/banner.css">
+    <script src="/assets/js/banner.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="<%= hoster %>"><img src="/assets/img/logo.png" alt="Car Auction Logo" class="logo"></a>
+            </div>
+            <nav class="nav">
+                <button class="menu-toggle" aria-label="Open Menu">☰</button>
+                <ul class="nav-links">
+                    <li><a href="<%= hoster %>">Accueil</a></li>
+                    <li><a href="<%= hoster %>/car/sell">Vendre votre Voiture</a></li>
+                    <li><a href="<%= hoster %>/fav">Vos favoris</a></li>
+                    <li><a href="<%= hoster %>/your">Vos voitures</a></li>
+                    <li><a href="<%= hoster %>/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-right">
+                <input type="text" placeholder="Rechercher" class="search-bar">
+                <% if (user) { %>
+                <span class="user-name">Bonjour, <%= user.firstname %></span>
+                    <a href="<%= hoster %>/logout" class="cta-button logout-link">Déconnexion</a>
+                <% } else { %>
+                <a href="<%= hoster %>/login" class="cta-button login-link">Connectez-vous</a>
+                <% } %>
+                <a href="<%= hoster %>/panier" class="cta-button panier-icon">Panier</a>
+            </div>
+        </div>
+    </header>
+    <script src="/assets/js/menu-toggle.js"></script>
+</body>

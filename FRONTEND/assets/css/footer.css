@@ -1,0 +1,128 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #070202;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-nav nav a:hover {
+    color: #ddd;
+}
+
+.social-media {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1);
+}
+
+.newsletter {
+    text-align: center;
+}
+
+.newsletter h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    width: 250px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #e67e00;
+}
+
+.payment-methods {
+    text-align: center;
+}
+
+.payment-methods h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.payment-methods ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.payment-methods ul li img {
+    width: 60px;
+    height: 40px;
+}
+
+.footer-content p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+.about-us {
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 50px;
+}

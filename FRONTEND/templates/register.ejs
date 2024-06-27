@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- Définition de l'encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Inscription</title> <!-- Titre de la page -->
+    <link rel="stylesheet" href="/assets/css/register.css"> <!-- Lien vers la feuille de style CSS spécifique -->
+</head>
+
+<!-- Inclusion du header avec des données passées -->
+<%- include("../partials/header.ejs", { hoster, user, path }) %>
+
+<body>
+    <!-- Affichage d'une bannière avec message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <div class="container">
+            <div class="form-container sign-up-container">
+                <form action="<%= hoster %>/register" method="POST">
+                    <h1>Créer un compte</h1> <!-- Titre de la section d'inscription -->
+                    <!-- Champs de formulaire pour l'inscription -->
+                    <input type="text" name="firstname" minlength="3" placeholder="Prénom" required/>
+                    <input type="text" name="lastname" minlength="3" placeholder="Nom" required/>
+                    <input type="email" name="email" minlength="5" placeholder="Email" required/>
+                    <input type="password" name="password" minlength="8" placeholder="Mot de passe" required/>
+                    <input type="text" name="address" minlength="8" placeholder="Adresse" required/>
+                    <input type="text" name="city" minlength="3" placeholder="Ville" required/>
+                    <input type="text" name="postal" minlength="5" placeholder="Code Postal" required/>
+                    <input type="text" name="phone" minlength="10" placeholder="Numéro de téléphone" required/>
+                    <button type="submit">S'inscrire</button> <!-- Bouton pour soumettre le formulaire d'inscription -->
+                    <p>Vous avez déjà un compte ? <a href="<%= hoster %>/login">Connexion</a></p> <!-- Lien vers la page de connexion -->
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Inclusion du footer -->
+    <%- include("../partials/footer.ejs") %>
+
+</body>
+</html>

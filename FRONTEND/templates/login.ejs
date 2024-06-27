@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Métadonnées du document -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Connexion</title> <!-- Titre de la page -->
+    <!-- Lien vers la feuille de style CSS -->
+    <link rel="stylesheet" href="/assets/css/login.css">
+</head>
+
+<!-- Inclusion du header avec des données passées -->
+<%- include("../partials/header.ejs", {hoster, user, path}) %>
+
+<body>
+    <!-- Affichage d'une bannière avec message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <div class="container">
+            <!-- Formulaire de connexion -->
+            <div class="form-container sign-in-container">
+                <form action="<%= hoster %>/login" method="POST">
+                    <h1>Connexion</h1>
+                    <input type="email" placeholder="Email" name="email" required/> <!-- Champ pour l'email -->
+                    <input type="password" placeholder="Mot de passe" name="password" required/> <!-- Champ pour le mot de passe -->
+                    <button type="submit">Connexion</button> <!-- Bouton de soumission du formulaire -->
+                    <p>Pas encore de compte ? <a href="<%= hoster %>/register">S'inscrire</a></p> <!-- Lien vers la page d'inscription -->
+                </form>
+            </div>
+            <!-- Overlay pour les panels de connexion -->
+            <div class="overlay-container">
+                <div class="overlay">
+                    <!-- Panel de gauche -->
+                    <div class="overlay-panel overlay-left">
+                        <h1>Bienvenue de retour !</h1>
+                        <p>Pour rester connecté avec nous, veuillez vous connecter avec vos informations personnelles</p>
+                        <button class="ghost" id="signIn">Connexion</button> <!-- Bouton pour basculer vers le panel de connexion -->
+                    </div>
+                    <!-- Panel de droite -->
+                    <div class="overlay-panel overlay-right">
+                        <h1>Bonjour, Amis !</h1>
+                        <p>Entrez vos informations personnelles et commencez votre voyage avec nous</p>
+                        <a href="<%= hoster %>/register"><button class="ghost" id="signUp">S'inscrire</button></a> <!-- Bouton pour aller vers la page d'inscription -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Inclusion du footer -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- Script JavaScript pour la gestion des overlays -->
+    <script src="/assets/js/scripts.js"></script>
+</body>
+</html>

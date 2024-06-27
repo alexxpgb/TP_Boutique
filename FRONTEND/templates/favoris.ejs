@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Métadonnées du document -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Car Auction - Favoris</title> <!-- Titre de la page -->
+    <!-- Lien vers la feuille de style CSS -->
+    <link rel="stylesheet" href="/assets/css/favoris.css">
+</head>
+
+<!-- Inclusion du header avec des données passées -->
+<%- include("../partials/header.ejs", { hoster, user, path }) %>
+
+<body>
+    <!-- Affichage d'une bannière avec message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <!-- Section des meilleures voitures vendues -->
+        <section class="best-selling-cars">
+            <h2>Vos favoris</h2>
+            <!-- Liste des voitures favorites -->
+            <div class="car-list" id="car-list">
+                <% if(cars.length === 0) { %>
+                    <!-- Message si la liste des favoris est vide -->
+                    <p>Votre liste de favoris est vide.</p>
+                <% } else { %>
+                    <!-- Boucle pour afficher chaque voiture favorite -->
+                    <% cars.forEach(car => { %>
+                        <div class="car-item">
+                            <img src="/uploads/<%= car.images[0] %>" alt="<%= car.model %>"> <!-- Image de la voiture -->
+                            <div class="car-details">
+                                <p><strong>Modèle:</strong> <%= car.model %></p> <!-- Modèle de la voiture -->
+                                <p><strong>Prix actuel:</strong> <%= car.price %>€</p> <!-- Prix actuel de la voiture -->
+                                <div class="buttons">
+                                    <!-- Boutons d'action en fonction de l'état de la voiture -->
+                                    <% if (car.sold) { %>
+                                        <!-- Affiche un message si la voiture est vendue -->
+                                        <p>Cette voiture a été vendue.</p>
+                                        <a href="/fav/<%= car.ID %>?action=remove" class="cta-button">Retirer</a> <!-- Bouton pour retirer la voiture des favoris -->
+                                    <% } else { %>
+                                        <a href="/car/<%= car.ID %>" class="cta-button acheter">Voir</a> <!-- Bouton pour voir les détails de la voiture -->
+                                        <a href="/fav/<%= car.ID %>?action=remove" class="cta-button">Retirer</a> <!-- Bouton pour retirer la voiture des favoris -->
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <!-- Inclusion du footer avec des données passées -->
+    <%- include("../partials/footer.ejs", { hoster }) %>
+</body>
+</html>

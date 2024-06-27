@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succès de Paiement</title>
+    <style>
+        body {
+            display: flex; /* Utilisation de flexbox pour centrer verticalement et horizontalement */
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Hauteur de la fenêtre visible */
+            margin: 0; /* Suppression des marges par défaut */
+            font-family: Arial, sans-serif; /* Police de caractères */
+            background-color: #f0f0f0; /* Couleur de fond */
+        }
+        .container {
+            text-align: center; /* Alignement du texte au centre */
+            background: white; /* Fond blanc */
+            padding: 20px; /* Espacement intérieur */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ombre légère */
+        }
+        .container h1 {
+            color: #4CAF50; /* Couleur du titre */
+        }
+        .container p {
+            font-size: 16px; /* Taille de la police du paragraphe */
+            color: #333; /* Couleur du texte */
+        }
+    </style>
+    <script>
+        setTimeout(function(){
+            window.location.href = "<%= hoster %>/your"; /* Redirection automatique après 5 secondes */
+        }, 5000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Paiement Réussi !</h1> <!-- Titre de confirmation -->
+        <p>Merci pour votre achat. Vous allez être redirigé dans 5 secondes.</p> <!-- Message de confirmation -->
+    </div>
+</body>
+</html>

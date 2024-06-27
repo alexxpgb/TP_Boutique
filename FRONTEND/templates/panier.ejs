@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Métadonnées du document -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Car Auction - Panier</title> <!-- Titre de la page -->
+    <link rel="stylesheet" href="/assets/css/index.css"> <!-- Lien vers la feuille de style CSS -->
+</head>
+
+<!-- Inclusion du header avec des données passées -->
+<%- include("../partials/header.ejs", { hoster, user, path }) %>
+
+<body>
+    <!-- Affichage d'une bannière avec message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <section class="best-selling-cars">
+            <h2>Votre panier</h2>
+            <div class="car-list" id="car-list">
+                <!-- Vérification si le panier est vide -->
+                <% if(cars.length === 0) { %>
+                    <p>Votre panier est vide.</p>
+                <% } else { %>
+                    <!-- Boucle sur les voitures dans le panier -->
+                    <% cars.forEach(car => { %>
+                        <div class="car-item">
+                            <img src="/uploads/<%= car.images[0] %>" alt="<%= car.model %>"> <!-- Image de la voiture -->
+                            <div class="car-details">
+                                <p><strong>Modèle:</strong> <%= car.model %></p> <!-- Détails du modèle de voiture -->
+                                <p><strong>Prix actuel:</strong> <%= car.price %>€</p> <!-- Détails du prix de la voiture -->
+                                <div class="buttons">
+                                    <!-- Vérification si la voiture est vendue -->
+                                    <% if (car.sold) { %>
+                                        <p>Cette voiture a été vendue.</p>
+                                        <a href="/panier/<%= car.ID %>?action=remove" class="cta-button">Retirer</a> <!-- Bouton pour retirer la voiture du panier -->
+                                    <% } else { %>
+                                        <a href="/car/<%= car.ID %>" class="cta-button acheter">Voir</a> <!-- Bouton pour voir les détails de la voiture -->
+                                        <a href="/panier/<%= car.ID %>?action=remove" class="cta-button">Retirer</a> <!-- Bouton pour retirer la voiture du panier -->
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+            
+            <!-- Affichage du montant total du panier et bouton pour payer -->
+            <% if (cars.length > 0) { %>
+                <% let price = 0 %> <!-- Initialisation de la variable price -->
+                <% cars.forEach(car => { %>
+                    <% price += car.price %> <!-- Calcul du prix total en ajoutant chaque prix de voiture -->
+                <% }) %>
+                <h2>Montant : <%= price %>€</h2> <!-- Affichage du montant total -->
+                <a href="/checkout" class="cta-button">Payer</a> <!-- Bouton pour aller vers la page de paiement -->
+            <% } %>
+        </section>
+    </main>
+
+    <!-- Inclusion du footer avec des données passées -->
+    <%- include("../partials/footer.ejs", { hoster }) %>
+</body>
+</html>

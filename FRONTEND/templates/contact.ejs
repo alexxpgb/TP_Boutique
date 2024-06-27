@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Métadonnées du document -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Contact - Car Auction</title> <!-- Titre de la page -->
+    <!-- Liens vers les feuilles de style CSS -->
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/banner.css">
+</head>
+
+<!-- Inclusion du header -->
+<%- include("../partials/header.ejs") %>
+
+<body>
+    <!-- Affichage d'une bannière avec message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <!-- Section de contact -->
+        <section class="contact">
+            <h2>Contact</h2>
+            <!-- Formulaire de contact -->
+            <form class="contact-form" action="/contact" method="POST">
+                <input type="text" name="name" placeholder="Nom" required> <!-- Champ pour le nom -->
+                <input type="email" name="email" placeholder="Email" required> <!-- Champ pour l'email -->
+                <textarea name="message" placeholder="Message" required></textarea> <!-- Champ pour le message -->
+                <button class="cta-button" type="submit">Envoyer</button> <!-- Bouton d'envoi du formulaire -->
+            </form>
+            <!-- Informations de contact -->
+            <div class="contact-info">
+                <p><strong>Adresse:</strong> 5a Reynard Park</p> <!-- Adresse -->
+                <p><strong>Téléphone:</strong> +33 7 62 65 50 86</p> <!-- Numéro de téléphone -->
+                <p><strong>Email:</strong> petit.alexandre.pro@gmail.com</p> <!-- Adresse email -->
+                <div id="map"></div> <!-- Emplacement pour une carte (non définie dans le code fourni) -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Inclusion du footer -->
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Auction - Vos voitures</title>
+    <link rel="stylesheet" href="/assets/css/favoris.css">
+</head>
+
+<%- include("../partials/header.ejs", { hoster, user, path }) %>
+
+<body>
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+    <main>
+        <section class="best-selling-cars">
+            <h2>Vos voitures</h2>
+            <div class="car-list" id="car-list">
+                <% if(cars.length === 0) { %>
+                    <p>Votre liste de voiture est vide.</p>
+                <% } else { %>
+                    <% cars.forEach(car => { %>
+                        <div class="car-item">
+                            <img src="/uploads/<%= car.images[0] %>" alt="<%= car.model %>">
+                            <div class="car-details">
+                                <p><strong>Marque:</strong> <%= car.make %></p>
+                                <p><strong>Modèle:</strong> <%= car.model %></p>
+                                <div class="buttons">
+                                    <a href="/car/<%= car.ID %>" class="cta-button acheter">Voir</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    
+    <%- include("../partials/footer.ejs", { hoster }) %>
+
+</body>
+</html>

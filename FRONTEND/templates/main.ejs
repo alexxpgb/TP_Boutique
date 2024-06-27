@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Auction</title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+
+<!-- Inclusion de l'en-tête partial avec les variables hoster, user et path -->
+<%- include("../partials/header.ejs", { hoster, user, path }) %>
+
+<body>
+    <!-- Affichage du message si présent -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <section class="best-selling-cars">
+            <h2>Bienvenu sur Car Auction, voici les vehicules en stock:</h2>
+            <div class="car-list" id="car-list">
+                <!-- Boucle pour afficher chaque voiture -->
+                <% cars.forEach(car => { %>
+                <div class="car-item">
+                    <div class="car-item-img">
+                        <img src="/uploads/<%= car.images[0] %>" alt="<%= car.model %>">
+                    </div>
+                    <div class="car-details">
+                        <p><strong>Modèle:</strong> <%= car.model %></p>
+                        <p><strong>Prix actuel:</strong> <%= car.price %>€</p>
+                        <div class="buttons">
+                            <a href="/car/<%= car.ID %>" class="cta-button acheter">Voir</a>
+                            <!-- Vérification si l'utilisateur est le propriétaire de la voiture -->
+                            <% if (user && user.id === car.userID) { %>
+                                <p>Cette voiture est à vous.</p>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+            <div class="pagination" id="pagination"></div>
+            <div class="search-filters">
+                <!-- Filtres de recherche par marque et par prix -->
+                <div class="filter-item">
+                    <a href="/?filter=bmw" class="cta-button acheter">NOS BMW</a>
+                </div>
+                <div class="filter-item">
+                    <a href="/?filter=merco" class="cta-button acheter">NOS MERCEDES</a>
+                </div>
+                <div class="filter-item">
+                    <a href="/?filter=audi" class="cta-button acheter">NOS AUDI</a>
+                </div>
+                <a href="/?filter=lower" class="cta-button acheter">Prix croissant</a>
+                <a href="/?filter=higher" class="cta-button acheter">Prix décroissant</a>
+            </div>
+        </section>
+
+        <!-- Section héros avec image et texte -->
+        <section class="hero">
+            <img src="/assets/img/garage.jpg" alt="Hero Image" class="hero-image">
+            <div class="hero-text">
+                <h1>Ici vous pouvez vendre votre voiture</h1>
+                <p>Les meilleures occasions pour vendre votre voiture se trouvent ici.</p>
+                <a href="<%= hoster %>/car/sell"><button class="cta-button">Vendre votre Voiture</button></a>
+            </div>
+        </section>
+
+        <!-- Section avis clients -->
+        <section class="testimonials">
+            <h2 class="sell-your-car">Nos Avis Clients</h2>
+            <!-- Liste des témoignages clients -->
+            <div class="testimonial">
+                <p>Pierre Lambert : "J'ai découvert ce site de vente de voitures par hasard et je suis ravi de l'expérience. La navigation est fluide, les informations sur les voitures sont détaillées, et j'ai trouvé exactement ce que je cherchais. Le processus d'achat est simple et sécurisé. Je le recommande vivement !"</p>
+                <span>★★★★★</span>
+            </div>
+            <div class="testimonial">
+                <p>Sophie Lefevre : "Je suis un passionné de voitures et ce site m'a vraiment impressionné. La qualité des photos et des descriptions des véhicules est exceptionnelle. J'ai pu facilement comparer différentes options et trouver la voiture parfaite pour moi. Un service client réactif et professionnel complète cette excellente expérience d'achat en ligne."</p>
+                <span>★★★★★</span>
+            </div>
+            <div class="testimonial">
+                <p>Julien Martin : "En tant que novice dans l'achat de voitures en ligne, ce site m'a offert une expérience sans stress. Les filtres de recherche sont très pratiques pour affiner mes choix, et chaque voiture est présentée avec tous les détails nécessaires. Je me sens vraiment confiant dans mes décisions grâce à ce site bien conçu."</p>
+                <span>★★★★★</span>
+            </div>
+            <div class="testimonial">
+                <p>Émilie Dubois : "Je suis un passionné de voitures et ce site m'a vraiment impressionné. La qualité des photos et des descriptions des véhicules est exceptionnelle. J'ai pu facilement comparer différentes options et trouver la voiture parfaite pour moi. Un service client réactif et professionnel complète cette excellente expérience d'achat en ligne."</p>
+                <span>★★★★★</span>
+            </div>
+            <div class="testimonial">
+                <p>Thomas Leroy : "Je suis enchanté par mon expérience sur ce site. Non seulement j'ai trouvé une voiture qui correspond parfaitement à mes besoins, mais j'ai aussi eu l'impression d'être soutenu à chaque étape de l'achat. Les conseils sur le financement et les assurances sont très utiles. C'est un site que je recommande à tous ceux qui recherchent une expérience d'achat de voiture en ligne simple et efficace."</p>
+                <span>★★★★★</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Inclusion du pied de page partial avec la variable hoster -->
+    <%- include("../partials/footer.ejs", { hoster }) %>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

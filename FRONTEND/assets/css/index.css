@@ -1,0 +1,464 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    margin-top: 60px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #8c75a3;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 120;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    height: 40px;
+}
+
+header .nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .nav ul li {
+    margin: 0 15px;
+}
+
+header .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 14px 7px;
+    transition: color 0.3s;
+}
+
+header .nav ul li a:hover {
+    color: #ddd;
+}
+
+header .nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .nav-right input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+header .nav-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header .nav-right a img {
+    height: 24px;
+    margin-right: 5px;
+}
+
+header .nav-right .login-link,
+header .nav-right .panier-icon {
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 24px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    border-radius: 5px;
+    border: 1px solid #FFD700;
+    background-color: #FFD700;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #e6c200;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.featured-car {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.featured-car img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.car-details {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.car-details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.featured-car .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.featured-car .cta-button.favoris {
+    background-color: #FFD700;
+    border: 1px solid #FFD700;
+}
+
+.featured-car .cta-button.favoris:hover {
+    background-color: #e6c200;
+}
+
+.featured-car .cta-button.acheter {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.featured-car .cta-button.acheter:hover {
+    background-color: #45a049;
+}
+
+.best-selling-cars {
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 20px 0;
+}
+
+.car-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.car-item-img {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.car-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-item .car-details {
+    text-align: left;
+    padding-top: 10px;
+}
+
+.car-item .car-details p {
+    font-size: 16px;
+    color: #333;
+}
+
+.car-item .car-details p strong {
+    font-weight: bold;
+    color: #000;
+}
+
+.search-filters {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ddd;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.search-filters a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.search-filters a:hover {
+    background-color: #e6c200;
+}
+
+.brand-logo {
+    width: 40px;
+    height: auto;
+    margin-top: 10px;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.brand-logo:hover {
+    transform: scale(1.1);
+}
+
+.sell-your-car,
+.blog,
+.testimonials,
+.about-us,
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-content nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content nav a:hover {
+    color: #ddd;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.newsletter {
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header .header-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    header .nav ul {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header .nav ul li {
+        margin: 0;
+    }
+
+    header .nav-right {
+        margin-top: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
+    .featured-car {
+        padding: 15px;
+    }
+
+    .car-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .search-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-filters a {
+        margin: 5px;
+    }
+}

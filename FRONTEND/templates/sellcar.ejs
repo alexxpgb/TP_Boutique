@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- Définition de l'encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Vendre votre Voiture</title> <!-- Titre de la page -->
+    <link rel="stylesheet" href="/assets/css/sell_car.css"> <!-- Lien vers la feuille de style CSS spécifique -->
+</head>
+
+<!-- Inclusion du header avec un fichier EJS partiel -->
+<%- include("../partials/header.ejs") %>
+
+<body>
+    <main>
+        <section class="sell-your-car">
+            <h2>Vendre votre Voiture</h2> <!-- Titre de la section -->
+            <p>Remplissez le formulaire ci-dessous pour ajouter votre voiture à notre site :</p> <!-- Description -->
+            <form class="car-upload-form" action="<%= hoster %>/car/sell" method="POST" enctype="multipart/form-data">
+                <!-- Formulaire de téléchargement de voiture -->
+                <label for="car-make">Marque:</label> <!-- Étiquette pour la marque -->
+                <select id="car-make" name="make" required>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes">Mercedes</option>
+                </select> <!-- Sélection de la marque avec options pré-définies -->
+
+                <label for="car-model">Modèle:</label> <!-- Étiquette pour le modèle -->
+                <input type="text" id="car-model" name="model" placeholder="Modèle" minlength="2" required> <!-- Champ pour le modèle -->
+
+                <label for="car-year">Année:</label> <!-- Étiquette pour l'année -->
+                <input type="text" id="car-year" name="year" placeholder="Année" minlength="4" required> <!-- Champ pour l'année -->
+
+                <label for="car-mileage">Kilométrage:</label> <!-- Étiquette pour le kilométrage -->
+                <input type="text" id="car-mileage" name="mileage" placeholder="Kilométrage" minlength="1" required> <!-- Champ pour le kilométrage -->
+
+                <label for="car-condition">État Général:</label> <!-- Étiquette pour l'état général -->
+                <input type="text" id="car-condition" name="condition" placeholder="État Général" minlength="3" required> <!-- Champ pour l'état général -->
+
+                <label for="car-price">Prix:</label> <!-- Étiquette pour le prix -->
+                <input type="number" id="car-price" name="price" placeholder="Prix" minlength="1" value="10000" required> <!-- Champ pour le prix -->
+
+                <label for="car-horse">Puissance CH:</label> <!-- Étiquette pour la puissance en chevaux -->
+                <input type="number" id="car-horse" name="horse" placeholder="horse" minlength="1" value="75" required> <!-- Champ pour la puissance en chevaux -->
+
+                <label for="car-fast">0-100km/h:</label> <!-- Étiquette pour la vitesse de 0 à 100 km/h -->
+                <input type="number" id="car-fast" name="fast" placeholder="horse" minlength="1" value="12" step="0.1" required> <!-- Champ pour la vitesse de 0 à 100 km/h -->
+
+                <label for="car-description">Description:</label> <!-- Étiquette pour la description -->
+                <textarea id="car-description" name="description" placeholder="Description" required></textarea> <!-- Champ pour la description -->
+
+                <label for="images">Ajouter des photos:</label> <!-- Étiquette pour télécharger des images -->
+                <input type="file" id="images" name="images" multiple required accept=".png, .jpg, .jpeg" minlength="3" maxlength="3"> <!-- Champ pour télécharger des images, acceptant seulement .png, .jpg, .jpeg -->
+
+                <button class="cta-button" type="submit">Soumettre</button> <!-- Bouton pour soumettre le formulaire -->
+            </form>
+        </section>
+    </main>
+    
+    <!-- Inclusion du footer -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- Chargement du script JavaScript -->
+    <script src="/assets/js/scripts.js"></script>
+</body>
+</html>

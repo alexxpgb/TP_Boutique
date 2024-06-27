@@ -1,0 +1,136 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f6f5f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #fff;
+    font-size: 14px; /* Augmenter légèrement la taille pour une meilleure lisibilité */
+    font-weight: bold;
+    padding: 12px 30px; /* Ajuster les dimensions pour un aspect plus équilibré */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e03e1f;
+}
+
+.sell-your-car {
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+.sell-your-car h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.sell-your-car p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.car-upload-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-upload-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.car-upload-form input[type="text"],
+.car-upload-form textarea,
+.car-upload-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-content nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content nav a:hover {
+    color: #ddd;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.newsletter {
+    text-align: center;
+    margin-bottom: 20px; /* Ajout de marges pour un espacement plus clair */
+}
+
+.newsletter input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    width: 200px; /* Ajuster la largeur si nécessaire */
+}
+

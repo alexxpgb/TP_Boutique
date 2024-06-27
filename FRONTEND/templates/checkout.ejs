@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Métadonnées du document -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Paiement - Car Auction</title> <!-- Titre de la page -->
+    <!-- Liens vers les feuilles de style CSS -->
+    <link rel="stylesheet" href="/assets/css/payment.css">
+    <link rel="stylesheet" href="/assets/css/banner.css">
+</head>
+
+<!-- Inclusion du header -->
+<%- include("../partials/header.ejs") %>
+
+<body>
+    <!-- Affichage d'une bannière avec message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <!-- Section de paiement -->
+        <section class="payment">
+            <h1>Informations de Paiement</h1>
+            <div class="payment-form">
+                <!-- Formulaire de paiement -->
+                <form action="/checkout/process" method="POST">
+                    <!-- Détails de facturation -->
+                    <div class="billing-details">
+                        <h2>Détails de Facturation</h2>
+                        <!-- Champ pour le nom complet pré-rempli avec les informations de l'utilisateur -->
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" value="<%= user.firstname %> <%= user.lastname %>" required>
+                        </div>
+                        <!-- Champ pour l'email pré-rempli avec l'email de l'utilisateur -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" value="<%= user.email %>" required>
+                        </div>
+                        <!-- Champ pour l'adresse pré-rempli avec l'adresse de l'utilisateur -->
+                        <div class="form-group">
+                            <label for="address">Adresse</label>
+                            <input type="text" id="address" name="address" value="<%= user.address %>" required>
+                        </div>
+                        <!-- Champ pour la ville pré-rempli avec la ville de l'utilisateur -->
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <input type="text" id="city" name="city" value="<%= user.city %>" required>
+                        </div>
+                        <!-- Champ pour le code postal pré-rempli avec le code postal de l'utilisateur -->
+                        <div class="form-group">
+                            <label for="postal-code">Code Postal</label>
+                            <input type="text" id="postal-code" name="postal-code" value="<%= user.postal %>" required>
+                        </div>
+                        <!-- Champ pour le pays -->
+                        <div class="form-group">
+                            <label for="country">Pays</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                    </div>
+
+                    <!-- Détails de paiement -->
+                    <div class="payment-details">
+                        <h2>Détails de Paiement</h2>
+                        <!-- Champ pour le nom sur la carte -->
+                        <div class="form-group">
+                            <label for="card-name">Nom sur la carte</label>
+                            <input type="text" id="card-name" name="cardname" required>
+                        </div>
+                        <!-- Champ pour le numéro de carte -->
+                        <div class="form-group">
+                            <label for="card-number">Numéro de carte</label>
+                            <input type="text" id="card-number" name="cardnumber" required>
+                        </div>
+                        <!-- Champ pour la date d'expiration -->
+                        <div class="form-group">
+                            <label for="expiry-date">Date d'expiration</label>
+                            <input type="text" id="expiry-date" name="expirydate" placeholder="MM/AA" required>
+                        </div>
+                        <!-- Champ pour le CVC -->
+                        <div class="form-group">
+                            <label for="cvc">CVC</label>
+                            <input type="text" id="cvc" name="cvc" required>
+                        </div>
+                    </div>
+
+                    <!-- Bouton de soumission du formulaire -->
+                    <button type="submit" class="submit-button">Payer maintenant <%= price %>€</button>
+
+                    <!-- Liste des voitures à payer -->
+                    <h2>Voitures :</h2>
+                    <ul>
+                        <% cars.forEach(car => { %>
+                            <li><%= car.model %> - <%= car.price %>€</li>
+                        <% }) %>
+                    </ul>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Inclusion du footer -->
+    <%- include("../partials/footer.ejs") %>
+
+    <!-- Chargement du script JavaScript -->
+    <script src="/assets/js/payment.js"></script>
+</body>
+</html>

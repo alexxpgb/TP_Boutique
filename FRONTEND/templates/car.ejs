@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Définition des métadonnées -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Paramètres pour le viewport -->
+    <title>Produit - Mercedes-Benz AMG GT-R</title> <!-- Titre de la page -->
+    <!-- Liens vers les feuilles de style CSS -->
+    <link rel="stylesheet" href="/assets/css/car.css">
+    <link rel="stylesheet" href="/assets/css/banner.css">
+    <!-- Chargement du script JavaScript -->
+    <script src="/assets/js/car.js"></script>
+</head>
+
+<body>
+    <!-- Inclusion du header avec des variables hoster, user, path -->
+    <%- include("../partials/header.ejs", {hoster, user, path}) %>
+
+    <!-- Affichage d'une bannière avec un message conditionnel -->
+    <% if (message) { %>
+        <div id="banner" class="banner <%= message.type %>">
+            <p><%= message.text %></p>
+        </div>
+    <% } %>
+
+    <main>
+        <!-- Section principale pour les détails du produit -->
+        <section class="product-details">
+            <!-- Galerie de produits avec image principale et miniatures -->
+            <div class="product-gallery">
+                <img id="mainImage" src="/uploads/<%= car.images[0] %>" alt="<%= car.model %>">
+                <div class="thumbnail-images">
+                    <!-- Miniatures d'images avec gestion d'événements onclick -->
+                    <img src="/uploads/<%= car.images[0] %>" alt="<%= car.make %> Thumbnail 1" onclick="changeImage('/uploads/<%= car.images[0] %>')">
+                    <img src="/uploads/<%= car.images[1] %>" alt="<%= car.make %> Thumbnail 2" onclick="changeImage('/uploads/<%= car.images[1] %>')">
+                    <img src="/uploads/<%= car.images[2] %>" alt="<%= car.make %> Thumbnail 3" onclick="changeImage('/uploads/<%= car.images[2] %>')">
+                </div>
+            </div>
+            <!-- Informations détaillées sur le produit -->
+            <div class="product-info">
+                <h1><%= car.make %> <%= car.model %> - <%= car.year %></h1>
+                <p class="price">Prix: <span><%= car.price %> €</span></p>
+                <p class="description">
+                    <%= car.description %>
+                </p>
+                <!-- Options d'achat en fonction de l'utilisateur connecté -->
+                <div class="purchase-options">
+                    <% if(user) { %> 
+                        <% if (user.cars.includes(car.ID)) { %>
+                            <!-- L'utilisateur possède déjà cette voiture -->
+                        <% } else { %>
+                            <% if (user.favoris && !user.favoris.includes(car.ID)) { %>
+                                <!-- L'utilisateur peut ajouter aux favoris -->
+                                <a href="/fav/<%= car.ID %>" class="cta-button acheter">Ajouter favoris</a>
+                            <% } else { %>
+                                <!-- La voiture est déjà dans les favoris de l'utilisateur -->
+                                <p>Cette voiture est déjà dans vos favoris.</p>
+                            <% } %>
+                        <% } %>
+                    <% } else { %>
+                        <!-- Message si l'utilisateur n'est pas connecté -->
+                        <p>Connectez-vous pour ajouter cette voiture à vos favoris.</p>
+                    <% } %>
+                    <% if (user && user.id === car.userID) { %>
+                        <!-- Affichage si l'utilisateur est propriétaire de la voiture -->
+                        <p>Cette voiture est à vous.</p>
+                    <% } else { %>
+                        <% if(user) { %> 
+                            <% if (user.cars.includes(car.ID)) { %>
+                                <!-- L'utilisateur possède déjà cette voiture -->
+                                <p>Cette voiture est déjà à vous.</p>
+                            <% } else { %>
+                                <% if (user.panier && !user.panier.includes(car.ID)) { %>
+                                    <!-- L'utilisateur peut ajouter au panier -->
+                                    <a href="/panier/<%= car.ID %>" class="cta-button acheter">Ajouter au panier</a>
+                                <% } else { %>
+                                    <!-- La voiture est déjà dans le panier de l'utilisateur -->
+                                    <p>Cette voiture est déjà dans votre panier.</p>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            <!-- Message si l'utilisateur n'est pas connecté -->
+                            <p>Connectez-vous pour ajouter cette voiture à votre panier.</p>
+                        <% } %>
+                    <% } %>
+                </div>
+                <!-- Méthodes de paiement acceptées -->
+                <div class="payment-methods">
+                    <h3>Méthodes de paiement</h3>
+                    <ul>
+                        <li><img src="/assets/img/visa.png" alt="Visa"></li>
+                        <li><img src="/assets/img/mastercard.png" alt="Mastercard"></li>
+                        <li><img src="/assets/img/paypal.png" alt="PayPal"></li>
+                        <li><img src="/assets/img/amex.png" alt="American Express"></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section pour les spécifications techniques du produit -->
+        <section class="specifications">
+            <h2>Spécifications</h2>
+            <ul>
+                <li>Puissance: <%= car.horse %> ch</li>
+                <li>Accélération: 0-100 km/h en <%= car.fast %> secondes</li>
+            </ul>
+        </section>
+
+        <!-- Section pour les informations supplémentaires (onglets) -->
+        <section class="additional-info">
+            <div class="tabs">
+                <!-- Boutons pour les onglets de la section -->
+                <button class="tab-button" onclick="openTab('reviews')">Avis</button>
+                <button class="tab-button" onclick="openTab('questions')">Questions/Réponses</button>
+                <button class="tab-button" onclick="openTab('bid-history')">Historique des enchères</button>
+            </div>
+            <!-- Contenu des onglets -->
+            <div id="reviews" class="tab-content">
+                <h3>Avis</h3>
+                <p>Il n'y a pas encore d'avis.</p>
+            </div>
+            <div id="questions" class="tab-content">
+                <h3>Questions/Réponses</h3>
+                <p>Pas de questions pour le moment.</p>
+            </div>
+            <div id="bid-history" class="tab-content">
+                <h3>Historique des enchères</h3>
+                <p>Aucune enchère pour le moment.</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Inclusion du pied de page -->
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>

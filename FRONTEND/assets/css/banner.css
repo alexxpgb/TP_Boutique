@@ -1,0 +1,18 @@
+.banner {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    /*top: 0;*/
+    left: 0;
+    z-index: 1000;
+}
+
+.banner.success {
+    background-color: green;
+}
+
+.banner.error {
+    background-color: red;
+}
